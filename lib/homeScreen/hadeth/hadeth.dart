@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/My_theme.dart';
 import 'package:islami/homeScreen/hadeth/iteamHadethName.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../Provider/app_config_provider.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -13,6 +17,7 @@ class _HadethTabState extends State<HadethTab> {
   List<Hadeath> ahdeath = [];
 
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     if (ahdeath.isEmpty) {
       loadFile();
     }
@@ -22,36 +27,38 @@ class _HadethTabState extends State<HadethTab> {
           child: Image(image: AssetImage("assets/images/ahadeth_image.png")),
         ),
         Divider(
-          color: MyTheme.primaryColor,
+          color: provider.isDark() ? MyTheme.yellowColor : MyTheme.primaryColor,
           thickness: 3,
         ),
         Text(
-          "Hadeth Name",
+          AppLocalizations.of(context)!.hadeath_name,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Divider(
-          color: MyTheme.primaryColor,
+          color: provider.isDark() ? MyTheme.yellowColor : MyTheme.primaryColor,
           thickness: 3,
         ),
         ahdeath.isEmpty
             ? CircularProgressIndicator(
-                color: MyTheme.primaryColor,
-              )
+          color: MyTheme.primaryColor,
+        )
             : Expanded(
-                child: ListView.separated(
-                    itemBuilder: (context, index) {
-                      return IteamHadethName(
-                        hadeath: ahdeath[index],
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return Divider(
-                        color: MyTheme.primaryColor,
+          child: ListView.separated(
+              itemBuilder: (context, index) {
+                return IteamHadethName(
+                  hadeath: ahdeath[index],
+                );
+              },
+              separatorBuilder: (context, index) {
+                return Divider(
+                        color: provider.isDark()
+                            ? MyTheme.yellowColor
+                            : MyTheme.primaryColor,
                         thickness: 2,
                       );
-                    },
-                    itemCount: ahdeath.length),
-              )
+              },
+              itemCount: ahdeath.length),
+        )
       ],
     );
   }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../Provider/app_config_provider.dart';
 
 class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -17,7 +21,9 @@ class RadioTab extends StatelessWidget {
         SizedBox(
           height: 70,
         ),
-        Image(image: AssetImage("assets/images/Group 5.png")),
+        provider.isDark()
+            ? Image(image: AssetImage("assets/images/Group 4.png"))
+            : Image(image: AssetImage("assets/images/Group 5.png")),
       ],
     );
   }

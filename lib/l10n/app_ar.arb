@@ -1,0 +1,17 @@
+{
+  "app_title": "اسلامي",
+  "sura_name": "اسم السوره",
+  "hadeath_name": "اسم الحديث",
+  "quran": "قران",
+  "hadeath": "الحديث",
+  "sabaha": "السبحه",
+  "radio": "الاذاعه",
+  "num_of_sabaha": "عدد التسبيحات",
+  "setting": "الاعدادات",
+  "language": "اللغه",
+  "arabic": "العربيه",
+  "english": "الانجليزيه",
+  "theme": "النمط",
+  "dark": "ليلي",
+  "light": "نهاري"
+}
