@@ -15,7 +15,7 @@ class RadioTab extends StatelessWidget {
           style: Theme.of(context).textTheme.titleSmall,
         ),
         SizedBox(
-          height: 60,
+          height: 70,
         ),
         Image(image: AssetImage("assets/images/Group 5.png")),
       ],
