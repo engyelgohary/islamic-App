@@ -30,51 +30,45 @@ class _RadioBodyState extends State<RadioBody> {
         SizedBox(
           height: 70,
         ),
-        Row(
-          children: [
-            const SizedBox(
-              width: 40,
-            ),
-            IconButton(
-                onPressed: () {
-                  cubit.previousRadio();
-                },
-                icon: Icon(
-                  Icons.skip_previous_rounded,
-                  size: 60,
-                  color: provider.isDark()
-                      ? MyTheme.yellowColor
-                      : MyTheme.primaryColor,
-                )),
-            const SizedBox(
-              width: 80,
-            ),
-            IconButton(
-                onPressed: () {
-                  cubit.clickOnPlay();
-                },
-                icon: Icon(
-                  cubit.isPlay ? Icons.pause_sharp : Icons.play_arrow_rounded,
-                  size: 60,
-                  color: provider.isDark()
-                      ? MyTheme.yellowColor
-                      : MyTheme.primaryColor,
-                )),
-            const SizedBox(
-              width: 80,
-            ),
-            IconButton(
-                onPressed: () {
-                  cubit.nextRadio();
-                },
-                icon: Icon(
-                  Icons.skip_next_rounded,
-                  size: 60,
-                  color: provider.isDark()
-                      ? MyTheme.yellowColor
-                      : MyTheme.primaryColor,
-                )),
-          ],
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    cubit.previousRadio();
+                  },
+                  icon: Icon(
+                    Icons.skip_previous_rounded,
+                    size: 40,
+                    color: provider.isDark()
+                        ? MyTheme.yellowColor
+                        : MyTheme.primaryColor,
+                  )),
+              IconButton(
+                  onPressed: () {
+                    cubit.clickOnPlay();
+                  },
+                  icon: Icon(
+                    cubit.isPlay ? Icons.pause_sharp : Icons.play_arrow_rounded,
+                    size: 40,
+                    color: provider.isDark()
+                        ? MyTheme.yellowColor
+                        : MyTheme.primaryColor,
+                  )),
+              IconButton(
+                  onPressed: () {
+                    cubit.nextRadio();
+                  },
+                  icon: Icon(
+                    Icons.skip_next_rounded,
+                    size: 40,
+                    color: provider.isDark()
+                        ? MyTheme.yellowColor
+                        : MyTheme.primaryColor,
+                  )),
+            ],
+          ),
         )
       ],
     );
