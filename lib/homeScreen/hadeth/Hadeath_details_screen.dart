@@ -50,9 +50,8 @@ class _HadeathDetialsState extends State<HadeathDetials> {
             vertical: MediaQuery.of(context).size.width * .15,
           ),
           decoration: BoxDecoration(
-              color: provider.isDark()
-                  ? MyTheme.primaryDark
-                  : MyTheme.primaryColor,
+              color:
+                  provider.isDark() ? MyTheme.primaryDark : MyTheme.whiteColor,
               borderRadius: BorderRadius.circular(25)),
           child: ListView.builder(
             itemBuilder: (context, index) {

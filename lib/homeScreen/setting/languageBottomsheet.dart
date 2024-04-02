@@ -15,6 +15,7 @@ class _BottomsheetState extends State<Bottomsheet> {
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
     return Container(
+      height: MediaQuery.of(context).size.height * .19,
       color: provider.isDark() ? MyTheme.primaryColor : MyTheme.whiteColor,
       padding: EdgeInsets.all(15),
       child: Column(
